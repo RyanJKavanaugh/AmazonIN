@@ -12,7 +12,7 @@ import xlrd
 import sys
 from INVariables import workbookNameData
 
-workbook = xlrd.open_workbook(workbookNameData)
+workbook = xlrd.open_workbook('DataIN.xlsx')
 worksheet = workbook.sheet_by_index(0)
 Jenkins = worksheet.cell(1, 4).value
 
