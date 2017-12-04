@@ -45,20 +45,16 @@ menu_options = unittest.TestLoader().loadTestsFromTestCase(Verify_Menu_Options)
 # create a test suite combining search_text and home_page_test
 test_suite = unittest.TestSuite([legend, header_links, future_dates_and_text_sizes, map_layers, user_login, create_and_delete_route, menu_options])
 
-counter = 0
-numOftimes = 100
+# counter = 0
+# numOftimes = 100
 
 if Jenkins == True:
     # run the suite
     # unittest.TextTestRunner(verbosity=2).run(test_suite)
     #unittest.TextTestRunner(verbosity=2).run(test_suite)
-    while counter < numOftimes:
-        test_runner = unittest.TextTestRunner(resultclass=unittest.TextTestResult)
-        result = test_runner.run(test_suite)
-        counter += 1
-        print 'test number: ' + str(counter)
-        print
 
+    test_runner = unittest.TextTestRunner(resultclass=unittest.TextTestResult)
+    result = test_runner.run(test_suite)
     sys.exit(not result.wasSuccessful())
 
 else:
